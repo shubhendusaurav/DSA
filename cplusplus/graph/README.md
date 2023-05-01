@@ -19,6 +19,6 @@ Agenda:\
 7: Minimum Spanning Tree (Prim's Algo)\
 8: Kruskal's Algo\
 9: Bridges in a graph\
-10: Articulation points
-11: Kosaraju's Algorithm
+10: Articulation points\
+11: Kosaraju's Algorithm\
 12: Bellman Ford Algorithm
