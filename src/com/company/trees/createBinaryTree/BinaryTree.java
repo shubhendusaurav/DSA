@@ -32,16 +32,12 @@ public class BinaryTree {
         Queue<Node> queue = new LinkedList<Node>();
         queue.add(root);
         while (queue.size() > 0) {
-            int count = queue.size();
-            for (int i = 0; i < count; i++) {
-                Node node = queue.remove();
-                System.out.print(node.data + " ");
-                if (node.left != null)
-                    queue.add(node.left);
-                if (node.right != null)
-                    queue.add(node.right);
-            }
-            System.out.println();
+            Node node = queue.remove();
+            System.out.print(node.data + " ");
+            if (node.left != null)
+                queue.add(node.left);
+            if (node.right != null)
+                queue.add(node.right);
         }
     }
 
@@ -174,5 +170,44 @@ public class BinaryTree {
         }
         printKLevelsDown(node.left, k - 1);
         printKLevelsDown(node.right, k - 1);
+    }
+
+    static ArrayList<Node> path;
+
+    public boolean findNode(Node node, int data) {
+        if (node == null)
+            return false;
+        if (node.data == data) {
+            path.add(node);
+            return true;
+        }
+        if (findNode(node.left, data)) {
+            path.add(node);
+            return true;
+        }
+        if (findNode(node.right, data)) {
+            path.add(node);
+            return true;
+        }
+        return false;
+    }
+
+    public void printKLevelsDown1(Node node, int k, Node blocker) {
+        if (node == null || k < 0 || node == blocker) {
+            return;
+        }
+        if (k == 0) {
+            System.out.print(node.data + " ");
+        }
+        printKLevelsDown1(node.left, k - 1, blocker);
+        printKLevelsDown1(node.right, k - 1, blocker);
+    }
+
+    public void printKNodesFar(Node node, int data, int k) {
+        path = new ArrayList<>();
+        findNode(node, data);
+        for (int i = 0; i < path.size(); i++) {
+            printKLevelsDown1(path.get(i), k - i, i == 0 ? null : path.get(i - 1));
+        }
     }
 }
