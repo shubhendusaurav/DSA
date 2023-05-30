@@ -20,9 +20,9 @@ public class Main {
 //        tree.inOrderTraversal();
 //        tree.preOrderTraversal();
 //        tree.postOrderTraversal();
-        tree.levelOrderTraversal(); // RPA - Queue
+        tree.levelOrderTraversal();
 
-        /*Size, Sum, Max and Height in a Binary Tree*/
+        /*Size, Sum, Max and Height in a Binary Tree*//*
 //        System.out.println("Size of Tree : " + tree.size(tree.root));
 //        System.out.println("Sum of Tree : " + tree.sum(tree.root));
 //        System.out.println("Max of Tree : " + tree.max(tree.root));
@@ -40,9 +40,14 @@ public class Main {
         Order of the nodes in the doubly linked list must be same as in the inorder traversal of Binary Tree*/
 
 //        tree.inOrderTraversal();
-        tree.createLinkedList();
-        System.out.println("Converted to DLL");
-        tree.printDLL();
+//        tree.createLinkedList();
+//        System.out.println("Converted to DLL");
+//        tree.printDLL();
+
+        /*Print all the nodes k distance from any random node in the tree in Time Complexity O(n) and Space Complexity O(n)*/
+//        tree.printKNodesFar(tree.root, 18, 1);
+
+
 
     }
 }
